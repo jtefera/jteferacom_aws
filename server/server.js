@@ -47,7 +47,7 @@ var PATHS = {
 //logger
 
 app.use((0, _morgan2.default)('combined'));
-var recipeServer = require("../recipe_app_react/server/serverApp.js").app;
+var recipeServer = require("../recipes_app_react/server/serverApp.js").app;
 app.use("/recipes", recipeServer);
 app.use("/one_out", _express2.default.static('1out/public'));
 

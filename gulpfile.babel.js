@@ -104,7 +104,7 @@ gulp.task('babel', shell.task([
 ]));
 
 gulp.task('babelAll', shell.task([
-  'babel recipe_app_react/src/server --out-dir recipe_app_react/server',
+  'babel recipes_app_react/src/server --out-dir recipes_app_react/server',
   'babel src/server --out-dir server'
 ]))
 

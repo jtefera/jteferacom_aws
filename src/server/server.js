@@ -24,7 +24,7 @@ const PATHS = {
 //logger
 
 app.use(morgan('combined'));
-let recipeServer = require("../recipe_app_react/server/serverApp.js").app
+let recipeServer = require("../recipes_app_react/server/serverApp.js").app
 app.use("/recipes", recipeServer);
 app.use("/one_out", express.static('1out/public'));
 
