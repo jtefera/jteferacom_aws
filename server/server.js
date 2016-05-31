@@ -69,7 +69,7 @@ app.use(_bodyParser2.default.urlencoded({ extended: true }));
 	debug: true
 }));*/
 
-var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+var server_port = 80;
 //const server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 
 app.listen(server_port, function () {
