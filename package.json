@@ -9,6 +9,7 @@
   "author": "Jonathan T Endale",
   "license": "ISC",
   "dependencies": {
+    "aws-sdk": "^2.3.17",
     "babel": "^6.5.2",
     "babel-core": "^6.7.7",
     "babel-loader": "^6.2.4",
