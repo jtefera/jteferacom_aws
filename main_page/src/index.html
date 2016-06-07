@@ -45,6 +45,10 @@
     >
 
     <link
+      href='https://fonts.googleapis.com/css?family=Roboto:400,700|Laila:400,700'
+      rel='stylesheet'
+      type='text/css'>
+    <link
       href="./css/style.css"
       rel="stylesheet"
     >
@@ -96,14 +100,14 @@
         <div class="row">
           <div class="col-lg-12 text-center">
             <img
-              class="img-responsive"
+              class="img-responsive img-circle"
               src="img/profile.png"
               alt=""
             >
             <div class="intro-light">
-              <span class="name">Jonathan T Endale</span>
+              <h1 class="name">Jonathan T Endale</h1>
               <hr class="star-light">
-              <span class="skills">Front-End Developer</span>
+              <h3 class="skills">Front-End Developer</h3>
             </div>
           </div>
         </div>
@@ -292,7 +296,7 @@
         </div>
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2">
-            <form name="sentMessage" id="contactForm" novalidate>
+            <form name="sentMessage" id="contactForm" method="POST" novalidate>
               <div class="row control-group">
                 <div class="form-group col-xs-12 floating-label-form-group controls">
                   <label>Name</label>
@@ -303,6 +307,7 @@
                     id="name"
                     required
                     data-validation-required-message="Please Enter Your Name"
+                    value="Jonathan"
                   >
                   <p class="help-block text-danger"></p>
                 </div>
@@ -318,6 +323,7 @@
                     id="email"
                     required
                     data-validation-required-message="Please Enter Your Email"
+                    value="jonahum@gmail.com"
                   >
                   <p class="help-block text-danger"></p>
                 </div>
@@ -331,6 +337,7 @@
                     placeholder="Phone Number"
                     id="phone"
                     required data-validation-required-message="Please enter your phone number."
+                    value="7028810253"
                    >
                    <p class="help-block text-danger"></p>
                 </div>
@@ -344,6 +351,7 @@
                      placeholder="Message"
                      id="message"
                      required data-validation-required-message="Please enter a message.">
+                      Holaa
                    </textarea>
                    <p class="help-block text-danger"></p>
                  </div>
@@ -368,8 +376,8 @@
         <div class="container">
           <div class="row">
             <div class="footer-col col-md-4">
-              <h3>Location</h3>
-              <p>holaaa</p>
+              <h3>Contact</h3>
+              <p>Send a message to contact@jtefera.com</p>
             </div>
             <div class="footer-col col-md-4">
               <h3>Around the Web</h3>
@@ -413,10 +421,10 @@
               </ul>
             </div>
             <div class="footer-col col-md-4">
-              <h3>About Freelancer</h3>
+              <h3>Important</h3>
               <p>
-                Freelance is a free to use, open source Bootstrap theme
-                created by <a target="_blank" href="http://startbootstrap.com">Start Bootstrap</a>.
+                Willing and able to reallocate anywhere in the States. <br>
+                No Visa Sponsor needed. <br>
               </p>
             </div>
           </div>
@@ -426,7 +434,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        Copyright &copy; Your Website 2014
+                        Copyright &copy; Your Website 2016.
+                    </div>
+                    <div class="col-lg-12">
+                        Thanks to <a href="http://www.startbootstrap.com">StartBootstrap</a>
+                        for the template and <a href="http://flaticon.com">Flaticon</a> for some of the icons
                     </div>
                 </div>
             </div>
@@ -471,7 +483,7 @@
               <div class="col-xs-8 col-xs-offset-2">
                 <p>Starting from a Wordpress template, build the webpage of the
                   International Church of Madrid. As such, the work done was:
-                  <ul>
+                  <ul class="project-description-list">
                     <li>
                       Created an app with PHP and MySQL that made easy the uploading
                       and managing of the weekly audio recording.
@@ -567,7 +579,7 @@
               <div class="col-xs-8 col-xs-offset-2">
                 <p>
                   Web application of a recipes cookbook(in progress):
-                  <ul>
+                  <ul class="project-description-list">
                     <li>
                       Single Page Application built with React.js that allows
                       the easly addition, search, modification and deletion of recipes.
@@ -665,7 +677,7 @@
               >-->
               <div class="col-xs-8 col-xs-offset-2">
                 <p>Tic Tac Toe Game
-                  <ul>
+                  <ul class="project-description-list">
                     <li>
                       Possibility to play against the computer or against another player
                     </li>
@@ -1017,6 +1029,78 @@
     </div>
 
 
+    <script type="text/javascript">
+
+
+      contactForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var contactForm = document.getElementById("contactForm"),
+            nameContact = document.getElementById("name").value,
+            emailContact = document.getElementById("email").value,
+            phoneContact = document.getElementById("phone").value,
+            messageContact = document.getElementById("message").value,
+            /*payload = {
+              name: nameContact,
+              email: emailContact,
+              phone: phoneContact,
+              message: messageContact
+            },*/
+            payload = "name=" + encodeURIComponent(nameContact)
+                      +"&email=" + encodeURIComponent(emailContact)
+                      +"&phone=" + encodeURIComponent(phoneContact)
+                      +"&message="+ encodeURIComponent(messageContact)
+            headers = {
+              "accept": "application/json",
+              "cache-control": "no-cache",
+              "content-type": "application/x-www-form-urlencoded"
+            }
+        console.log("sin stringify -> ", payload)
+        console.log("stringify->", JSON.stringify(payload, null, ""))
+        console.log("stringify2 ->", JSON.stringify(payload, null, " "))
+        console.log("stringify->", JSON.stringify(payload, null, "\t"))
+        console.log("stringify->", JSON.parse(JSON.stringify(payload, null, "")))
+        console.log("stringify2 ->", JSON.parse(JSON.stringify(payload, null, " ")))
+        console.log("stringify->",JSON.parse( JSON.stringify(payload, null, "\t")))
+
+        fetch("/send_contact", {
+          method: "POST",
+          headers: headers,
+          body: payload
+        })
+        .then(function(response) {
+          return response.json()
+        })
+        .then(function(data) {
+          console.log("Data:")
+          console.log(data)
+        })
+        .catch(function(e){
+          console.log("Error!")
+          console.log(e)
+        })
+        /*
+        var data = "name=JOnathan&email=correojona%40hotmail.com&phone=7028810253&message=Te%20quiero";
+
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+
+        xhr.addEventListener("readystatechange", function () {
+          if (this.readyState === 4) {
+            console.log(this.responseText);
+          }
+        });
+
+        xhr.open("POST", "http://localhost/send_contact");
+        xhr.setRequestHeader("'content-type'", "application/json");
+        xhr.setRequestHeader("accept", "application/json");
+        xhr.setRequestHeader("cache-control", "no-cache");
+        xhr.setRequestHeader("postman-token", "00e37f5c-45bc-421f-8e68-32472e88daea");
+        xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+
+        xhr.send(data);
+        */
+      })
+    </script>
     <script src="js/index.js" type="text/javascript"></script>
   </body>
 </html>

@@ -79,10 +79,11 @@ header .container {
 header img {
   display: block;
   margin: 0 auto 20px;
+  border: 20px solid white;
 }
 header .intro-text .name {
   display: block;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 2em;
@@ -140,6 +141,8 @@ header .intro-text .skills {
 .navbar-default,
 .navbar-inverse {
   border: none;
+  background-image: none;
+  background-color: white;
 }
 section {
   padding: 100px 0;
@@ -408,4 +411,14 @@ footer .footer-below {
 .btnModal:active,
 .btnModal.active{
   border-color: #18bc9c;
+}
+
+.project-description-list{
+  font-size: large;
+  text-align: left;
+  list-style-type: khmer;
+}
+
+.linksModal {
+  margin-bottom: 20px;
 }

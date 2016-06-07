@@ -11,7 +11,7 @@ var ses = new aws.SES();
 var to = ['jonathantefera@outlook.com']
 
 // this must relate to a verified SES account
-var from = 'jonathantefera@outlook.com'
+var from = 'jonahum@gmail.com'
 
 
 // this sends the email
