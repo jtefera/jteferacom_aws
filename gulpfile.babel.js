@@ -46,7 +46,7 @@ const paths = {
 gulp.task('default', cb => {
   process.stdout.write('Gulp! Gulp! \n')
   //Creates a sequence of tasks that are to be called. One after the other
-  run('server', 'build', 'watch', cb);
+  run('build', 'watch', 'server', cb);
 });
 
 //Sets up the server container. gulp-live-server is an instance of express

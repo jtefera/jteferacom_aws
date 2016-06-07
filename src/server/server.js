@@ -5,6 +5,8 @@ import bodyParser from "body-parser";
 import fs from  'fs';
 import path from 'path'
 import morgan from 'morgan'
+import aws from 'aws-sdk'
+
 //var routes = require("routes");
 
 
@@ -46,6 +48,61 @@ app.use(bodyParser.urlencoded({extended: true}));
 	debug: true
 }));*/
 
+//Mail config
+
+//Config files with my AWS keys
+aws.config.loadFromPath('./main_page/mail/config.json');
+
+//SES is the AWS service for emails
+var ses = new aws.SES();
+
+// send to list
+var to = ['jonathantefera@outlook.com']
+
+// this must relate to a verified SES account
+var from = 'jonahum@gmail.com'
+
+//
+app.post("/send_contact", (req, res) => {
+	let contactInfo = req.body
+	console.log("..........................")
+	console.log(contactInfo)
+	console.log("..........................")
+	// this sends the email
+	// @todo - add HTML version
+	let subjectMessage = "jtefera.com: " + contactInfo.name,
+			messageText = "Message by " + contactInfo.name + "\n"
+										+ "Email: " + contactInfo.email + "\n"
+										+ "Phone: " + contactInfo.phone + "\n"
+										+ "Message: " + contactInfo.message + "\n"
+										+ "Date: " + new Date() + "\n"
+										+ "Unformatted" + JSON.stringify(req.body, null, "");
+	ses.sendEmail( {
+	   Source: from,
+	   Destination: { ToAddresses: to },
+	   Message: {
+	       Subject: {
+	          Data: subjectMessage
+	       },
+	       Body: {
+	           Text: {
+	               Data: messageText
+	           }
+	        }
+	   }
+	}
+	, function(err, data) {
+	    if(err) {
+	      throw err
+	    }
+
+	    console.log('Email sent:');
+	    console.log(data);
+	 });
+
+	res.json(contactInfo)
+
+})
 
 
 const server_port = 80;
@@ -55,5 +112,5 @@ app.listen(server_port, () => {
 	console.log("dirname is " + __dirname);
 	console.log("----------------------------");
 	console.log("Server started on"  + ":" + server_port);
-	console.log("----------------------------");
+	console.log("---------------------------");
 });

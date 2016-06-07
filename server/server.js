@@ -28,6 +28,10 @@ var _morgan = require("morgan");
 
 var _morgan2 = _interopRequireDefault(_morgan);
 
+var _awsSdk = require("aws-sdk");
+
+var _awsSdk2 = _interopRequireDefault(_awsSdk);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 //var routes = require("routes");
@@ -69,6 +73,55 @@ app.use(_bodyParser2.default.urlencoded({ extended: true }));
 	debug: true
 }));*/
 
+//Mail config
+
+//Config files with my AWS keys
+_awsSdk2.default.config.loadFromPath('./main_page/mail/config.json');
+
+//SES is the AWS service for emails
+var ses = new _awsSdk2.default.SES();
+
+// send to list
+var to = ['jonathantefera@outlook.com'];
+
+// this must relate to a verified SES account
+var from = 'jonahum@gmail.com';
+
+//
+app.post("/send_contact", function (req, res) {
+	var contactInfo = req.body;
+	console.log("..........................");
+	console.log(contactInfo);
+	console.log("..........................");
+	// this sends the email
+	// @todo - add HTML version
+	var subjectMessage = "jtefera.com: " + contactInfo.name,
+	    messageText = "Message by " + contactInfo.name + "\n" + "Email: " + contactInfo.email + "\n" + "Phone: " + contactInfo.phone + "\n" + "Message: " + contactInfo.message + "\n" + "Date: " + new Date() + "\n" + "Unformatted" + JSON.stringify(req.body, null, "");
+	ses.sendEmail({
+		Source: from,
+		Destination: { ToAddresses: to },
+		Message: {
+			Subject: {
+				Data: subjectMessage
+			},
+			Body: {
+				Text: {
+					Data: messageText
+				}
+			}
+		}
+	}, function (err, data) {
+		if (err) {
+			throw err;
+		}
+
+		console.log('Email sent:');
+		console.log(data);
+	});
+
+	res.json(contactInfo);
+});
+
 var server_port = 80;
 //const server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 
@@ -76,5 +129,5 @@ app.listen(server_port, function () {
 	console.log("dirname is " + __dirname);
 	console.log("----------------------------");
 	console.log("Server started on" + ":" + server_port);
-	console.log("----------------------------");
+	console.log("---------------------------");
 });
