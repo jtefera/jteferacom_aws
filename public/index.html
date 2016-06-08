@@ -270,9 +270,8 @@
             I have experience working both with Front End(HTML/CSS, Javascript,
             React.js, Bootstrap) and Back-End (Node.js, PHP, MySQL, AWS) technologies
             and frameworks along with others non restricted to the web world(C++,
-            Matlab, Simulink, SolidWorks). My desire is to use all that I learned
-            to work along you in ideas that bring positive impact into the local and
-            global communities.
+            Matlab, Simulink, SolidWorks). My desire is to work along you to bring
+            your ideas to reality.
           </div>
           <div class="col-lg-8 col-lg-offset-2 text-center">
             <a
@@ -307,7 +306,6 @@
                     id="name"
                     required
                     data-validation-required-message="Please Enter Your Name"
-                    value="Jonathan"
                   >
                   <p class="help-block text-danger"></p>
                 </div>
@@ -323,7 +321,6 @@
                     id="email"
                     required
                     data-validation-required-message="Please Enter Your Email"
-                    value="jonahum@gmail.com"
                   >
                   <p class="help-block text-danger"></p>
                 </div>
@@ -337,7 +334,6 @@
                     placeholder="Phone Number"
                     id="phone"
                     required data-validation-required-message="Please enter your phone number."
-                    value="7028810253"
                    >
                    <p class="help-block text-danger"></p>
                 </div>
@@ -350,9 +346,7 @@
                      class="form-control"
                      placeholder="Message"
                      id="message"
-                     required data-validation-required-message="Please enter a message.">
-                      Holaa
-                   </textarea>
+                     required data-validation-required-message="Please enter a message."></textarea>
                    <p class="help-block text-danger"></p>
                  </div>
                </div>
@@ -1028,79 +1022,92 @@
       </div>
     </div>
 
+    <!-- Contact Modals -->
+    <!--Success-->
+    <div
+      class="contact-modal modal fade"
+      id="contactModalSuccess"
+      tabindex="-1"
+      role="dialog"
+      aria-hidden="true">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl">
 
-    <script type="text/javascript">
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="modal-body">
+              <h2>Sent!</h2>
+              <hr class="star-primary">
+              <div class="col-xs-8 col-xs-offset-2">
+                <p>
+                  <strong>Thank you for your message!</strong>
+                </p>
+                <p>
+                  The message was successfully sent! I will contact you
+                  as soon as possible!
+                </p>
+                <button
+                  type="button"
+                  class="btn btn-default"
+                  data-dismiss="modal"
+                >
+                  <i class="fa fa-times"></i> Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Success-->
+    <div
+      class="contact-modal modal fade"
+      id="contactModalError"
+      tabindex="-1"
+      role="dialog"
+      aria-hidden="true">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl">
 
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="modal-body">
+              <h2>It seams we are having some problems...</h2>
+              <hr class="star-primary">
+              <div class="col-xs-8 col-xs-offset-2">
+                <p>
+                  <strong>Unfortunately, the message couldn't be sent.</strong>
+                </p>
+                <p>
+                  You can try it again or send the message directly to contact@jtefera.com!
+                </p>
+                <p>
+                  <strong>Thank you for your time! :) </strong>
+                </p>
+                <button
+                  type="button"
+                  class="btn btn-default"
+                  data-dismiss="modal"
+                >
+                  <i class="fa fa-times"></i> Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-      contactForm.addEventListener("submit", function (e) {
-        e.preventDefault();
-        var contactForm = document.getElementById("contactForm"),
-            nameContact = document.getElementById("name").value,
-            emailContact = document.getElementById("email").value,
-            phoneContact = document.getElementById("phone").value,
-            messageContact = document.getElementById("message").value,
-            /*payload = {
-              name: nameContact,
-              email: emailContact,
-              phone: phoneContact,
-              message: messageContact
-            },*/
-            payload = "name=" + encodeURIComponent(nameContact)
-                      +"&email=" + encodeURIComponent(emailContact)
-                      +"&phone=" + encodeURIComponent(phoneContact)
-                      +"&message="+ encodeURIComponent(messageContact)
-            headers = {
-              "accept": "application/json",
-              "cache-control": "no-cache",
-              "content-type": "application/x-www-form-urlencoded"
-            }
-        console.log("sin stringify -> ", payload)
-        console.log("stringify->", JSON.stringify(payload, null, ""))
-        console.log("stringify2 ->", JSON.stringify(payload, null, " "))
-        console.log("stringify->", JSON.stringify(payload, null, "\t"))
-        console.log("stringify->", JSON.parse(JSON.stringify(payload, null, "")))
-        console.log("stringify2 ->", JSON.parse(JSON.stringify(payload, null, " ")))
-        console.log("stringify->",JSON.parse( JSON.stringify(payload, null, "\t")))
-
-        fetch("/send_contact", {
-          method: "POST",
-          headers: headers,
-          body: payload
-        })
-        .then(function(response) {
-          return response.json()
-        })
-        .then(function(data) {
-          console.log("Data:")
-          console.log(data)
-        })
-        .catch(function(e){
-          console.log("Error!")
-          console.log(e)
-        })
-        /*
-        var data = "name=JOnathan&email=correojona%40hotmail.com&phone=7028810253&message=Te%20quiero";
-
-        var xhr = new XMLHttpRequest();
-        xhr.withCredentials = true;
-
-        xhr.addEventListener("readystatechange", function () {
-          if (this.readyState === 4) {
-            console.log(this.responseText);
-          }
-        });
-
-        xhr.open("POST", "http://localhost/send_contact");
-        xhr.setRequestHeader("'content-type'", "application/json");
-        xhr.setRequestHeader("accept", "application/json");
-        xhr.setRequestHeader("cache-control", "no-cache");
-        xhr.setRequestHeader("postman-token", "00e37f5c-45bc-421f-8e68-32472e88daea");
-        xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-
-        xhr.send(data);
-        */
-      })
-    </script>
     <script src="js/index.js" type="text/javascript"></script>
   </body>
 </html>
