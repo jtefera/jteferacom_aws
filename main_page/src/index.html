@@ -307,7 +307,6 @@
                     id="name"
                     required
                     data-validation-required-message="Please Enter Your Name"
-                    value="Jonathan"
                   >
                   <p class="help-block text-danger"></p>
                 </div>
@@ -323,7 +322,6 @@
                     id="email"
                     required
                     data-validation-required-message="Please Enter Your Email"
-                    value="jonahum@gmail.com"
                   >
                   <p class="help-block text-danger"></p>
                 </div>
@@ -337,7 +335,6 @@
                     placeholder="Phone Number"
                     id="phone"
                     required data-validation-required-message="Please enter your phone number."
-                    value="7028810253"
                    >
                    <p class="help-block text-danger"></p>
                 </div>
@@ -351,7 +348,6 @@
                      placeholder="Message"
                      id="message"
                      required data-validation-required-message="Please enter a message.">
-                      Holaa
                    </textarea>
                    <p class="help-block text-danger"></p>
                  </div>
@@ -1028,10 +1024,95 @@
       </div>
     </div>
 
+    <!-- Contact Modals -->
+    <!--Success-->
+    <div
+      class="contact-modal modal fade"
+      id="contactModalSuccess"
+      tabindex="-1"
+      role="dialog"
+      aria-hidden="true">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl">
+
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="modal-body">
+              <h2>Sent!</h2>
+              <hr class="star-primary">
+              <div class="col-xs-8 col-xs-offset-2">
+                <p>
+                  <strong>Thank you for your message!</strong>
+                </p>
+                <p>
+                  The message was successfully sent! I will contact you
+                  as soon as possible!
+                </p>
+                <button
+                  type="button"
+                  class="btn btn-default"
+                  data-dismiss="modal"
+                >
+                  <i class="fa fa-times"></i> Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Success-->
+    <div
+      class="contact-modal modal fade"
+      id="contactModalError"
+      tabindex="-1"
+      role="dialog"
+      aria-hidden="true">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl">
+
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="modal-body">
+              <h2>It seams we are having some problems...</h2>
+              <hr class="star-primary">
+              <div class="col-xs-8 col-xs-offset-2">
+                <p>
+                  <strong>Unfortunately, the message couldn't be sent.</strong>
+                </p>
+                <p>
+                  You can try it again or send the message directly to contact@jtefera.com!
+                </p>
+                <p>
+                  <strong>Thank you for your time! :) </strong>
+                </p>
+                <button
+                  type="button"
+                  class="btn btn-default"
+                  data-dismiss="modal"
+                >
+                  <i class="fa fa-times"></i> Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
     <script type="text/javascript">
-
-
+      //Mail
       contactForm.addEventListener("submit", function (e) {
         e.preventDefault();
         var contactForm = document.getElementById("contactForm"),
@@ -1054,13 +1135,6 @@
               "cache-control": "no-cache",
               "content-type": "application/x-www-form-urlencoded"
             }
-        console.log("sin stringify -> ", payload)
-        console.log("stringify->", JSON.stringify(payload, null, ""))
-        console.log("stringify2 ->", JSON.stringify(payload, null, " "))
-        console.log("stringify->", JSON.stringify(payload, null, "\t"))
-        console.log("stringify->", JSON.parse(JSON.stringify(payload, null, "")))
-        console.log("stringify2 ->", JSON.parse(JSON.stringify(payload, null, " ")))
-        console.log("stringify->",JSON.parse( JSON.stringify(payload, null, "\t")))
 
         fetch("/send_contact", {
           method: "POST",
@@ -1071,12 +1145,10 @@
           return response.json()
         })
         .then(function(data) {
-          console.log("Data:")
-          console.log(data)
+          $("#contactModalSuccess").modal('show')
         })
         .catch(function(e){
-          console.log("Error!")
-          console.log(e)
+          $("#contactModalError").modal('show')
         })
         /*
         var data = "name=JOnathan&email=correojona%40hotmail.com&phone=7028810253&message=Te%20quiero";

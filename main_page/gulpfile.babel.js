@@ -42,6 +42,8 @@ const paths = {
   imgDest: '../public/img/',
   cssSrc: './src/css/**/*.css',
   cssDest: '../public/css/',
+  resourcesSrc: './resources/**/*',
+  resourcesDest: '../public/resources/',
 }
 
 //Task that will be run when we command gulp on the terminal
@@ -80,6 +82,11 @@ gulp.task('copyCss', cb => {
   return gulp.
           src(paths.cssSrc)
           .pipe(gulp.dest(paths.cssDest))
+})
+gulp.task('copyResources', cb => {
+  return gulp.
+          src(paths.resourcesSrc)
+          .pipe(gulp.dest(paths.resourcesDest))
 })
 //not used right now. Is a module created by facebook to give
 //more control on types in js
@@ -123,12 +130,13 @@ gulp.task("justwatching", () => {
   process.stdout.write('I am watching you! \n')
 });
 
-//Not used
+
 gulp.task('watchApp', () => {
   gulp.watch(paths.indexSrc, (cb) => run('copyHtml'));
   gulp.watch(paths.appsrcjs, (cb) => run('webpack'));
   gulp.watch(paths.imgSrc, (cb) => run('copyImg'));
   gulp.watch(paths.cssSrc, (cb) => run('copyCss'));
+  gulp.watch(paths.resourcesSrc, (cb) => run('copyResources'));
 });
 
 //We set a watcher that we watch to changes into the paths.srcjs files.

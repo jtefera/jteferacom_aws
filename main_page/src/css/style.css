@@ -422,3 +422,16 @@ footer .footer-below {
 .linksModal {
   margin-bottom: 20px;
 }
+
+.contact-modal .modal-content {
+  border-radius: 0;
+  background-clip: border-box;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: none;
+  /*min-height: 100%;*/
+  margin: 30px auto;
+  width: 90%;
+  padding: 100px 0;
+  text-align: center;
+}
