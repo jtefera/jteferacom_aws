@@ -270,9 +270,8 @@
             I have experience working both with Front End(HTML/CSS, Javascript,
             React.js, Bootstrap) and Back-End (Node.js, PHP, MySQL, AWS) technologies
             and frameworks along with others non restricted to the web world(C++,
-            Matlab, Simulink, SolidWorks). My desire is to use all that I learned
-            to work along you in ideas that bring positive impact into the local and
-            global communities.
+            Matlab, Simulink, SolidWorks). My desire is to work along you to bring
+            your ideas to reality.
           </div>
           <div class="col-lg-8 col-lg-offset-2 text-center">
             <a
@@ -347,8 +346,7 @@
                      class="form-control"
                      placeholder="Message"
                      id="message"
-                     required data-validation-required-message="Please enter a message.">
-                   </textarea>
+                     required data-validation-required-message="Please enter a message."></textarea>
                    <p class="help-block text-danger"></p>
                  </div>
                </div>
@@ -1110,69 +1108,6 @@
       </div>
     </div>
 
-
-    <script type="text/javascript">
-      //Mail
-      contactForm.addEventListener("submit", function (e) {
-        e.preventDefault();
-        var contactForm = document.getElementById("contactForm"),
-            nameContact = document.getElementById("name").value,
-            emailContact = document.getElementById("email").value,
-            phoneContact = document.getElementById("phone").value,
-            messageContact = document.getElementById("message").value,
-            /*payload = {
-              name: nameContact,
-              email: emailContact,
-              phone: phoneContact,
-              message: messageContact
-            },*/
-            payload = "name=" + encodeURIComponent(nameContact)
-                      +"&email=" + encodeURIComponent(emailContact)
-                      +"&phone=" + encodeURIComponent(phoneContact)
-                      +"&message="+ encodeURIComponent(messageContact)
-            headers = {
-              "accept": "application/json",
-              "cache-control": "no-cache",
-              "content-type": "application/x-www-form-urlencoded"
-            }
-
-        fetch("/send_contact", {
-          method: "POST",
-          headers: headers,
-          body: payload
-        })
-        .then(function(response) {
-          return response.json()
-        })
-        .then(function(data) {
-          $("#contactModalSuccess").modal('show')
-        })
-        .catch(function(e){
-          $("#contactModalError").modal('show')
-        })
-        /*
-        var data = "name=JOnathan&email=correojona%40hotmail.com&phone=7028810253&message=Te%20quiero";
-
-        var xhr = new XMLHttpRequest();
-        xhr.withCredentials = true;
-
-        xhr.addEventListener("readystatechange", function () {
-          if (this.readyState === 4) {
-            console.log(this.responseText);
-          }
-        });
-
-        xhr.open("POST", "http://localhost/send_contact");
-        xhr.setRequestHeader("'content-type'", "application/json");
-        xhr.setRequestHeader("accept", "application/json");
-        xhr.setRequestHeader("cache-control", "no-cache");
-        xhr.setRequestHeader("postman-token", "00e37f5c-45bc-421f-8e68-32472e88daea");
-        xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-
-        xhr.send(data);
-        */
-      })
-    </script>
     <script src="js/index.js" type="text/javascript"></script>
   </body>
 </html>
