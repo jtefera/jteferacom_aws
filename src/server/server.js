@@ -104,6 +104,13 @@ app.post("/send_contact", (req, res) => {
 
 })
 
+//If this middleware is used it is because none of the previous worked!
+//So,, it is a 404
+app.use((req, res) => {
+	res.status(404)
+	res.redirect('/404.html')
+})
+
 
 const server_port = 80;
 //const server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';

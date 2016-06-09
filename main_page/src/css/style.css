@@ -435,3 +435,20 @@ footer .footer-below {
   padding: 100px 0;
   text-align: center;
 }
+
+.error404header {
+  background-color: #bc8a18;
+}
+.error404header h1 {
+  font-size: 70px;
+}
+.error404message a {
+  color: white;
+  text-decoration: underline;
+}
+
+@media (min-width: 768px){
+  header .container {
+    padding-top: 100px;
+  }
+}

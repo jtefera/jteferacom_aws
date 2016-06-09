@@ -38,7 +38,7 @@ const paths = {
   appMainJsSrc: './src/app/main.js',
   //Points to the folder where the translapped files will be hosted
   appDest: '../public/js',
-  imgSrc: './img/**/*.png',
+  imgSrc: './img/**/*',
   imgDest: '../public/img/',
   cssSrc: './src/css/**/*.css',
   cssDest: '../public/css/',
