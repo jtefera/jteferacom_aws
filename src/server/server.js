@@ -1,6 +1,5 @@
 import http from "http";
 import express from "express";
-import babel from "babel-middleware";
 import bodyParser from "body-parser";
 import fs from  'fs';
 import path from 'path'
