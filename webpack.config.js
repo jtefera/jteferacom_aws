@@ -1,4 +1,4 @@
-//var CopyWebpackPlugin = require('copy-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = [{
     entry: {
         './public/js/index': './src/front/js/main.js',
@@ -20,6 +20,15 @@ module.exports = [{
             }
         ],
     },
+    plugins: [
+        new CopyWebpackPlugin([
+            { 
+                context: 'src/front/static',
+                from: '**/*',
+                to: 'public/',
+            }
+        ]),
+    ],
 },
 {
     entry: {
