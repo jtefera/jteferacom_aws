@@ -25,7 +25,7 @@ const PATHS = {
 //logger
 
 app.use(morgan('combined'));
-let recipeServer = require("../front/projects/recipes_app_react/server/serverApp.js").app
+let recipeServer = require("../projects/recipes_app_react/server/serverApp.js").app
 app.use("/recipes", recipeServer);
 app.use("/one_out", express.static('1out/public'));
 
@@ -50,7 +50,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 //Mail config
 
 //Config files with my AWS keys
-aws.config.loadFromPath('./main_page/mail/config.json');
+aws.config.loadFromPath('../mail/config.json');
 
 //SES is the AWS service for emails
 var ses = new aws.SES();
