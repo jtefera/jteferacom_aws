@@ -1,7 +1,7 @@
-var CopyWebpackPlugin = require('copy-webpack-plugin');
+//var CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = [{
     entry: {
-        './public/js/index': './src/js/main.js',
+        './public/js/index': './src/front/js/main.js',
     },
     output: {
         path: __dirname,
@@ -15,18 +15,11 @@ module.exports = [{
                 loader: 'babel-loader',
                 exclude: /node_modules/,
                 query: {
-                    presets: ['es2015', 'react', 'stage-2'],
+                    presets: ['es2015'],
                 },
             }
         ],
     },
-    plugins: [
-        new CopyWebpackPlugin([
-            { from: 'src/index.html', to: 'public/' },
-            { from: 'src/assets/**/*', to: 'public/' },
-            { from: 'src/css/**/*', to: 'public/style/', flatten: true }
-        ]),
-    ],
 },
 {
     entry: {
@@ -44,7 +37,7 @@ module.exports = [{
                 loader: 'babel-loader',
                 exclude: /node_modules/,
                 query: {
-                    presets: ['es2015', 'stage-2'],
+                    presets: ['es2015'],
                 },
             },
             {
