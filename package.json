@@ -4,7 +4,9 @@
   "description": "My webpage on AWS",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --watch --progress",
+    "server": "supervisor ./server/server.js"
   },
   "author": "Jonathan T Endale",
   "license": "ISC",
@@ -42,6 +44,7 @@
     "gulp-webpack": "^1.5.0",
     "rimraf": "^2.5.2",
     "run-sequence": "^1.1.5",
+    "supervisor": "^0.12.0",
     "webpack": "^1.14.0"
   }
 }
