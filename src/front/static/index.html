@@ -185,7 +185,27 @@
               <i class="fa fa-search-plus fa-3x"></i>
             </div>
           </div>
-          <img class="img-responsive" src="img/portfolio/church.png" height="100px" />
+          <img class="img-responsive" src="img/portfolio/icmadrid.png"/>
+        </a>
+      </div>
+      <div class="col-sm-4 portfolio-item">
+        <a href="#portfolioModalIssues" class="portfolio-link" data-toggle="modal">
+          <div class="caption">
+            <div class="caption-content">
+              <i class="fa fa-search-plus fa-3x"></i>
+            </div>
+          </div>
+          <img class="img-responsive" src="img/portfolio/issues.png" />
+        </a>
+      </div>
+      <div class="col-sm-4 portfolio-item">
+        <a href="#portfolioModalPodcasts" class="portfolio-link" data-toggle="modal">
+          <div class="caption">
+            <div class="caption-content">
+              <i class="fa fa-search-plus fa-3x"></i>
+            </div>
+          </div>
+          <img class="img-responsive" src="img/portfolio/icpodcasts.png" />
         </a>
       </div>
       <div class="col-sm-4 portfolio-item">
@@ -195,7 +215,7 @@
               <i class="fa fa-search-plus fa-3x"></i>
             </div>
           </div>
-          <img class="img-responsive" src="img/portfolio/food.png" />
+          <img class="img-responsive" src="img/portfolio/recipes.png" />
         </a>
       </div>
       <div class="col-sm-4 portfolio-item">
@@ -205,7 +225,7 @@
               <i class="fa fa-search-plus fa-3x"></i>
             </div>
           </div>
-          <img class="img-responsive" src="img/portfolio/pencils.png" />
+          <img class="img-responsive" src="img/portfolio/tictactoe.png" />
         </a>
       </div>
       <div class="col-sm-4 portfolio-item text-center">
@@ -235,7 +255,7 @@
               <i class="fa fa-search-plus fa-3x"></i>
             </div>
           </div>
-          <img class="img-responsive" src="img/portfolio/cube.png" />
+          <img class="img-responsive" src="img/portfolio/cubli.png" />
         </a>
       </div>
       <div class="col-sm-4 portfolio-item">
@@ -245,7 +265,7 @@
               <i class="fa fa-search-plus fa-3x"></i>
             </div>
           </div>
-          <img class="img-responsive" src="img/portfolio/tomato.png" />
+          <img class="img-responsive" src="img/portfolio/pomodoro.png" />
         </a>
       </div>
     </div>
@@ -385,6 +405,7 @@
     </div>
   </footer>
   <!-- Modals -->
+  <!--ICMadrid -->
   <div class="portfolio-modal modal fade" id="portfolioModalChurch" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-content">
       <div class="close-modal" data-dismiss="modal">
@@ -411,11 +432,6 @@
                   <ul class="project-description-list">
                     <li>
                       Started with a WordPress template
-                    </li>
-                    <li>
-                      Created an app with PHP and MySQL that made the uploading and managing of weekly audio recording easy. The app also synchronized
-                      audio files with iTunes Podcasts through XML/RSS:
-                      <a href="http://www.icmadrid.com/media" target="_blank">Media</a>.
                     </li>
                     <li>
                       First position on Google Search in its category.
@@ -490,7 +506,7 @@
                   <li>
                     Used Node.js and Express.js as the backend technologies. Created routing services to catch the GET and POST requests sent
                     by the app to create, delete, retrieve, or modify the records of each recipe.
-                  </li>
+                  </li> 
                   <li>
                     Used Gulp, Babel, Webpack, and Expect.js to automatize, transpile, join, and unit test the code.
                   </li>
@@ -524,6 +540,144 @@
                   <i class="fa fa-times"></i> Close
                 </button>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Issues -->
+  <div class="portfolio-modal modal fade" id="portfolioModalIssues" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="modal-body">
+            <h2>Issues Tracker</h2>
+            <hr class="star-primary">
+            <iframe src="http://icmadrid.com/issues" width="100%" height="700px" frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>
+              ></iframe>
+            <!--<img
+                src="img/portfolio/cabin.png"
+                class="img-responsive img-centered"
+                alt=""
+              >-->
+            <div class="col-xs-8 col-xs-offset-2">
+              <p>
+                Web App that allows the easy creation and reporting of bugs or issues.
+                <ul class="project-description-list">
+                  <li>
+                    Single Page Application built with React.js, Redux, Webpack.
+                  </li>
+                  <li>
+                    Using Firebase for the database and autorization.
+                  </li> 
+                  <li>
+                    Git as version control.
+                  </li>
+                </ul>
+              </p>
+              <ul class="list-inline item-details">
+                <li>
+                  <strong>React / Redux</strong>
+                </li>
+                <li>
+                  <strong>Firebase</strong>
+                </li>
+                <li>
+                  <strong>Firebase</strong>
+                </li>
+              </ul>
+              <div class="row linksModal">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                  <a href="http://icmadrid.com/issues" class="btn btn-lg btn-outline btnModal" target="_blank">
+                    <i class="fa fa-external-link"></i> Link
+                  </a>
+                  <a href="https://github.com/jtefera/issues-manager" class="btn btn-lg btn-outline btnModal" target="_blank">
+                    <i class="fa fa-github"></i> Github
+                  </a>
+                </div>
+              </div>
+              <button type="button" class="btn btn-default" data-dismiss="modal">
+                  <i class="fa fa-times"></i> Close
+                </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Podcasts -->
+  <div class="portfolio-modal modal fade" id="portfolioModalPodcasts" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="modal-body">
+            <h2>Podcasts</h2>
+            <hr class="star-primary">
+            <iframe src="http://www.icmadrid.com/media" width="100%" height="700px" frameborder='no' allowtransparency='true' allowfullscreen='true'
+              style='width: 100%;'>
+              ></iframe>
+              <!--<img
+                src="img/portfolio/cabin.png"
+                class="img-responsive img-centered"
+                alt=""
+              >-->
+              <div class="col-xs-8 col-xs-offset-2">
+                <p>Podcast manager
+                  <ul class="project-description-list">
+                    <li>
+                      Created an app with PHP and MySQL that made the uploading and managing of weekly audio recording easy.
+                    </li>
+                    <li>
+                      Podcasts uploaded are displayed in the website using the HTML5 audio tags.
+                    </li>
+                    <li>
+                      The app also synchronized audio files with iTunes Podcasts through XML/RSS.
+                    </li>
+                    <li>
+                      Podcast titles and categories are displayed in Spanish or English depending on the language of the user. 
+                    </li>
+                    <li>
+                      The user can filter the podcasts based on category and language. 
+                    </li>
+                    <li>
+                      Implemented links to download or share any of the files.
+                    </li>
+                  </ul>
+                </p>
+                <ul class="list-inline item-details">
+                  <li>
+                    <strong>PHP</strong>
+                  </li>
+                  <li>
+                    <strong>MySQL</strong>
+                  </li>
+                  <li>
+                    <strong>XML/RSS</strong>
+                  </li>
+                </ul>
+                <div class="row linksModal">
+                  <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <a href="http://www.icmadrid.com/media" class="btn btn-lg btn-outline btnModal" target="_blank">
+                      <i class="fa fa-external-link"></i> Link
+                    </a>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                  <i class="fa fa-times"></i> Close
+                </button>
+              </div>
           </div>
         </div>
       </div>
@@ -778,7 +932,7 @@
           <div class="modal-body">
             <h2>Cubli</h2>
             <hr class="star-primary">
-            <img src="img/portfolio/Robot.png" />
+            <img src="img/portfolio/cubli.gif" />
             <!--<img
                 src="img/portfolio/cabin.png"
                 class="img-responsive img-centered"
