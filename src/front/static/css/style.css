@@ -219,6 +219,68 @@ section.success a.active {
 #portfolio * {
   z-index: 2;
 }
+
+.portafolio-sprite {
+    background-image: url(../img/portfolio/spritesheet.png);
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto;
+}
+
+.portafolio-sprite-airplane {
+    width: 230px;
+    height: 256px;
+    background-position: -5px -5px;
+}
+
+.portafolio-sprite-cubli {
+    width: 230px;
+    height: 256px;
+    background-position: -245px -5px;
+}
+
+.portafolio-sprite-icmadrid {
+    width: 230px;
+    height: 256px;
+    background-position: -485px -5px;
+}
+
+.portafolio-sprite-icpodcasts {
+    width: 230px;
+    height: 256px;
+    background-position: -725px -5px;
+}
+
+.portafolio-sprite-issues {
+    width: 230px;
+    height: 256px;
+    background-position: -965px -5px;
+}
+
+.portafolio-sprite-ofevery {
+    width: 230px;
+    height: 256px;
+    background-position: -1205px -5px;
+}
+
+.portafolio-sprite-pomodoro {
+    width: 230px;
+    height: 256px;
+    background-position: -1445px -5px;
+}
+
+.portafolio-sprite-recipes {
+    width: 230px;
+    height: 256px;
+    background-position: -1685px -5px;
+}
+
+.portafolio-sprite-tictactoe {
+    width: 230px;
+    height: 256px;
+    background-position: -1925px -5px;
+}
+
 @media (min-width: 767px) {
   #portfolio .portfolio-item {
     margin: 0 0 30px;
@@ -456,8 +518,94 @@ footer .footer-below {
   display: inline-block;
 }
 
+.frameworks-sprite {
+    background-image: url(../img/programming_icons/spritesheet.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.frameworks-sprite-babel {
+    width: 45px;
+    height: 45px;
+    background-position: -5px -5px;
+}
+
+.frameworks-sprite-bootstrap {
+    width: 45px;
+    height: 45px;
+    background-position: -60px -5px;
+}
+
+.frameworks-sprite-css3 {
+    width: 45px;
+    height: 45px;
+    background-position: -115px -5px;
+}
+
+.frameworks-sprite-github {
+    width: 45px;
+    height: 45px;
+    background-position: -170px -5px;
+}
+
+.frameworks-sprite-html5 {
+    width: 45px;
+    height: 45px;
+    background-position: -225px -5px;
+}
+
+.frameworks-sprite-javascript {
+    width: 45px;
+    height: 45px;
+    background-position: -280px -5px;
+}
+
+.frameworks-sprite-jest {
+    width: 45px;
+    height: 45px;
+    background-position: -335px -5px;
+}
+
+.frameworks-sprite-node {
+    width: 45px;
+    height: 45px;
+    background-position: -390px -5px;
+}
+
+.frameworks-sprite-python {
+    width: 45px;
+    height: 45px;
+    background-position: -445px -5px;
+}
+
+.frameworks-sprite-react {
+    width: 45px;
+    height: 45px;
+    background-position: -500px -5px;
+}
+
+.frameworks-sprite-redux {
+    width: 45px;
+    height: 45px;
+    background-position: -555px -5px;
+}
+
+.frameworks-sprite-sass {
+    width: 45px;
+    height: 45px;
+    background-position: -610px -5px;
+}
+
+.frameworks-sprite-webpack {
+    width: 45px;
+    height: 45px;
+    background-position: -665px -5px;
+}
+
+
 @media (min-width: 768px){
   header .container {
     padding-top: 150px;
+    padding-bottom: 60px;
   }
 }
