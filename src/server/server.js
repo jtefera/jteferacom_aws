@@ -1,6 +1,5 @@
 import http from "http";
 import express from "express";
-import babel from "babel-middleware";
 import bodyParser from "body-parser";
 import fs from  'fs';
 import path from 'path'
@@ -26,9 +25,9 @@ const PATHS = {
 //logger
 
 app.use(morgan('combined'));
-let recipeServer = require("../recipes_app_react/server/serverApp.js").app
+let recipeServer = require("../projects/recipes_app_react/src/server/serverApp.js").app
 app.use("/recipes", recipeServer);
-app.use("/one_out", express.static('1out/public'));
+app.use("/one_out", express.static('../src/projects/1out/public'));
 
 //Static pages
 app.use(express.static('public'));
@@ -51,7 +50,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 //Mail config
 
 //Config files with my AWS keys
-aws.config.loadFromPath('./main_page/mail/config.json');
+aws.config.loadFromPath('./server/mail/config.json');
 
 //SES is the AWS service for emails
 var ses = new aws.SES();
