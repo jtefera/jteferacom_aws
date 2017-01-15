@@ -27,7 +27,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -146,6 +146,7 @@ header .intro-text .skills {
 }
 section {
   padding: 100px 0;
+  font-family: "Raleway";
 }
 section h2 {
   margin: 0;
