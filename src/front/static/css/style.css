@@ -447,6 +447,14 @@ footer .footer-below {
   text-decoration: underline;
 }
 
+.img-framework {
+  border: 0px;
+  width: 45px;  
+}
+#frameworks a {
+  display: inline-block;
+}
+
 @media (min-width: 768px){
   header .container {
     padding-top: 150px;
