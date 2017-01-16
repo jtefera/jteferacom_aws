@@ -29,7 +29,6 @@ let recipeServer = require("../projects/recipes_app_react/src/server/serverApp.j
 app.use("/recipes", recipeServer);
 app.use("/one_out", express.static(__dirname + '/src/projects/1out/public/'));
 //Directories in __dirname
-const fs = require('fs');
 fs.readdir(__dirname, (err, files) => {
   files.forEach(file => {
     console.log(file);
