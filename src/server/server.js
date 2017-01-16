@@ -27,7 +27,7 @@ const PATHS = {
 app.use(morgan('combined'));
 let recipeServer = require("../projects/recipes_app_react/src/server/serverApp.js").app
 app.use("/recipes", recipeServer);
-app.use("/one_out", express.static('../src/projects/1out/public'));
+app.use("/one_out", express.static('../projects/1out/public'));
 
 //Static pages
 app.use(express.static('public'));
