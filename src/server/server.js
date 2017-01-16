@@ -28,7 +28,13 @@ app.use(morgan('combined'));
 let recipeServer = require("../projects/recipes_app_react/src/server/serverApp.js").app
 app.use("/recipes", recipeServer);
 app.use("/one_out", express.static(__dirname + '/src/projects/1out/public/'));
-console.log(__dirname);
+//Directories in __dirname
+const fs = require('fs');
+fs.readdir(__dirname, (err, files) => {
+  files.forEach(file => {
+    console.log(file);
+  });
+})
 //Static pages
 app.use(express.static('public'));
 
