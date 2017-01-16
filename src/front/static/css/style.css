@@ -221,7 +221,7 @@ section.success a.active {
 }
 
 .portafolio-sprite {
-    background-image: url(../img/portfolio/spritesheet.png);
+    background-image: url(../img/portfolio/spritesheet.low.png);
     background-repeat: no-repeat;
     display: block;
     margin: 0 auto;
@@ -519,7 +519,7 @@ footer .footer-below {
 }
 
 .frameworks-sprite {
-    background-image: url(../img/programming_icons/spritesheet.png);
+    background-image: url(../img/programming_icons/spritesheet.low.png);
     background-repeat: no-repeat;
     display: block;
 }

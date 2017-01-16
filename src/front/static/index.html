@@ -11,62 +11,12 @@
       width: 100%;
     }
   </style>
-  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
-    crossorigin="anonymous">
-    </script>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
-      crossorigin="anonymous">
-      <!-- Optional theme -->
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r"
-        crossorigin="anonymous">
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
-          crossorigin="anonymous">
-          </script>
-          <!-- Google Analythics -->
-          <script>
-            (function (i, s, o, g, r, a, m) {
-              i['GoogleAnalyticsObject'] = r;
-              i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-              }, i[r].l = 1 * new Date();
-              a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-              a.async = 1;
-              a.src = g;
-              m.parentNode.insertBefore(a, m)
-            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
-            ga('create', 'UA-78947142-1', 'auto');
-            ga('send', 'pageview');
-          </script>
-          <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-          <link href='https://fonts.googleapis.com/css?family=Roboto:400,700|Laila:400,700' rel='stylesheet' type='text/css'>
-          <link href="./css/style.css" rel="stylesheet">
-          <!-- Favicon -->
-          <link rel="apple-touch-icon" sizes="57x57" href="/img/favicon/apple-touch-icon-57x57.png">
-          <link rel="apple-touch-icon" sizes="60x60" href="/img/favicon/apple-touch-icon-60x60.png">
-          <link rel="apple-touch-icon" sizes="72x72" href="/img/favicon/apple-touch-icon-72x72.png">
-          <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon/apple-touch-icon-76x76.png">
-          <link rel="apple-touch-icon" sizes="114x114" href="/img/favicon/apple-touch-icon-114x114.png">
-          <link rel="apple-touch-icon" sizes="120x120" href="/img/favicon/apple-touch-icon-120x120.png">
-          <link rel="apple-touch-icon" sizes="144x144" href="/img/favicon/apple-touch-icon-144x144.png">
-          <link rel="apple-touch-icon" sizes="152x152" href="/img/favicon/apple-touch-icon-152x152.png">
-          <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon-180x180.png">
-          <link rel="icon" type="image/png" href="/img/favicon/favicon-32x32.png" sizes="32x32">
-          <link rel="icon" type="image/png" href="/img/favicon/android-chrome-192x192.png" sizes="192x192">
-          <link rel="icon" type="image/png" href="/img/favicon/favicon-96x96.png" sizes="96x96">
-          <link rel="icon" type="image/png" href="/img/favicon/favicon-16x16.png" sizes="16x16">
-          <link rel="manifest" href="/img/favicon/manifest.json">
-          <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
-          <link rel="shortcut icon" href="/img/favicon/favicon.ico">
-          <meta name="msapplication-TileColor" content="#da532c">
-          <meta name="msapplication-TileImage" content="/img/favicon/mstile-144x144.png">
-          <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
-          <meta name="theme-color" content="#ffffff">
-
-          <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto" rel="stylesheet">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+    crossorigin="anonymous" />
+  <!-- Optional theme -->
+  <!-- Latest compiled and minified JavaScript -->
+  <link href="./css/style.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -119,11 +69,6 @@
             <hr class="star-light">
             <h3 class="skills">Front End Developer</h3>
             <div id="frameworks">
-              <script>
-                $(function () {
-                  $('[data-toggle="tooltip"]').tooltip();
-                })
-              </script>
               <a href="#" data-toggle="tooltip" data-placement="top" title="JavaScript (ES2016)">
                 <i class="frameworks-sprite frameworks-sprite-javascript"></i>
               </a>
@@ -311,28 +256,28 @@
           <form name="sentMessage" id="contactForm" method="POST" novalidate>
             <div class="row control-group">
               <div class="form-group col-xs-12 floating-label-form-group controls">
-                <label>Name</label>
+                <label for="name">Name</label>
                 <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please Enter Your Name">
                 <p class="help-block text-danger"></p>
               </div>
             </div>
             <div class="row control-group">
               <div class="form-group col-xs-12 floating-label-form-group controls">
-                <label>Email address</label>
+                <label for="email">Email address</label>
                 <input type="email" class="form-control" placeholder="Email Adress" id="email" required data-validation-required-message="Please Enter Your Email">
                 <p class="help-block text-danger"></p>
               </div>
             </div>
             <div class="row control-group">
               <div class="form-group col-xs-12 floating-label-form-group controls">
-                <label>Phone Number</label>
+                <label for="phone">Phone Number</label>
                 <input type="tel" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number.">
                 <p class="help-block text-danger"></p>
               </div>
             </div>
             <div class="row control-group">
               <div class="form-group col-xs-12 floating-label-form-group controls">
-                <label>Message</label>
+                <label for="message">Message</label>
                 <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
                 <p class="help-block text-danger"></p>
               </div>
@@ -361,22 +306,22 @@
             <h3>Around the Web</h3>
             <ul class="list-inline">
               <li>
-                <a href="https://github.com/jtefera" class="btn-social btn-outline" target="_blank">
+                <a href="https://github.com/jtefera" class="btn-social btn-outline" rel="noopener" target="_blank">
                   <i class="fa fa-fw fa-github"></i>
                 </a>
               </li>
               <li>
-                <a href="https://www.facebook.com/jonahum" class="btn-social btn-outline" target="_blank">
+                <a href="https://www.facebook.com/jonahum" class="btn-social btn-outline" rel="noopener" target="_blank">
                   <i class="fa fa-fw fa-facebook"></i>
                 </a>
               </li>
               <li>
-                <a href="https://twitter.com/JonathanTefera" class="btn-social btn-outline" target="_blank">
+                <a href="https://twitter.com/JonathanTefera" class="btn-social btn-outline" rel="noopener" target="_blank">
                   <i class="fa fa-fw fa-twitter"></i>
                 </a>
               </li>
               <li>
-                <a href="https://www.linkedin.com/in/jonathan-tefera-endale-655543a8" class="btn-social btn-outline" target="_blank">
+                <a href="https://www.linkedin.com/in/jonathan-tefera-endale-655543a8" class="btn-social btn-outline" rel="noopener" target="_blank">
                   <i class="fa fa-fw fa-linkedin"></i>
                 </a>
               </li>
@@ -419,7 +364,7 @@
           <div class="modal-body">
             <h2>International Church of Madrid</h2>
             <hr class="star-primary">
-            <iframe src="http://www.icmadrid.com" width="100%" height="700px" frameborder='no' allowtransparency='true' allowfullscreen='true'
+            <iframe id="icmadrid-iframe" width="100%" height="700px" frameborder='no' allowtransparency='true' allowfullscreen='true'
               style='width: 100%;'>
               ></iframe>
               <!--<img
@@ -461,7 +406,7 @@
                 </ul>
                 <div class="row linksModal">
                   <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <a href="http://www.icmadrid.com" class="btn btn-lg btn-outline btnModal" target="_blank">
+                    <a href="http://www.icmadrid.com" class="btn btn-lg btn-outline btnModal" rel="noopener" target="_blank">
                       <i class="fa fa-external-link"></i> Link
                     </a>
                   </div>
@@ -489,57 +434,58 @@
           <div class="modal-body">
             <h2>My Recipes</h2>
             <hr class="star-primary">
-            <iframe src="/recipes" width="100%" height="700px" frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>
+            <iframe id='recipes-iframe' width="100%" height="700px" frameborder='no' allowtransparency='true' allowfullscreen='true'
+              style='width: 100%;'>
               ></iframe>
-            <!--<img
+              <!--<img
                 src="img/portfolio/cabin.png"
                 class="img-responsive img-centered"
                 alt=""
               >-->
-            <div class="col-xs-8 col-xs-offset-2">
-              <p>
-                Web App of a Cookbook (in progress):
-                <ul class="project-description-list">
+              <div class="col-xs-8 col-xs-offset-2">
+                <p>
+                  Web App of a Cookbook (in progress):
+                  <ul class="project-description-list">
+                    <li>
+                      Single Page Application built with React.js that allows for the easy addition, search, modification, and deletion of recipes.
+                    </li>
+                    <li>
+                      Used Node.js and Express.js as the backend technologies. Created routing services to catch the GET and POST requests sent
+                      by the app to create, delete, retrieve, or modify the records of each recipe.
+                    </li>
+                    <li>
+                      Used Gulp, Babel, Webpack, and Expect.js to automatize, transpile, join, and unit test the code.
+                    </li>
+                    <li>
+                      Git as version control.
+                    </li>
+                  </ul>
+                </p>
+                <ul class="list-inline item-details">
                   <li>
-                    Single Page Application built with React.js that allows for the easy addition, search, modification, and deletion of recipes.
+                    <strong>React</strong>
                   </li>
                   <li>
-                    Used Node.js and Express.js as the backend technologies. Created routing services to catch the GET and POST requests sent
-                    by the app to create, delete, retrieve, or modify the records of each recipe.
-                  </li> 
-                  <li>
-                    Used Gulp, Babel, Webpack, and Expect.js to automatize, transpile, join, and unit test the code.
+                    <strong>Node</strong>
                   </li>
                   <li>
-                    Git as version control.
+                    <strong>Git</strong>
                   </li>
                 </ul>
-              </p>
-              <ul class="list-inline item-details">
-                <li>
-                  <strong>React</strong>
-                </li>
-                <li>
-                  <strong>Node</strong>
-                </li>
-                <li>
-                  <strong>Git</strong>
-                </li>
-              </ul>
-              <div class="row linksModal">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                  <a href="/recipes" class="btn btn-lg btn-outline btnModal" target="_blank">
-                    <i class="fa fa-external-link"></i> Link
-                  </a>
-                  <a href="https://github.com/jtefera/recipes_app_react" class="btn btn-lg btn-outline btnModal" target="_blank">
-                    <i class="fa fa-github"></i> Github
-                  </a>
+                <div class="row linksModal">
+                  <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <a href="/recipes" class="btn btn-lg btn-outline btnModal" target="_blank">
+                      <i class="fa fa-external-link"></i> Link
+                    </a>
+                    <a href="https://github.com/jtefera/recipes_app_react" class="btn btn-lg btn-outline btnModal" rel="noopener" target="_blank">
+                      <i class="fa fa-github"></i> Github
+                    </a>
+                  </div>
                 </div>
-              </div>
-              <button type="button" class="btn btn-default" data-dismiss="modal">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
                   <i class="fa fa-times"></i> Close
                 </button>
-            </div>
+              </div>
           </div>
         </div>
       </div>
@@ -559,7 +505,7 @@
           <div class="modal-body">
             <h2>Issues Tracker</h2>
             <hr class="star-primary">
-            <iframe src="http://icmadrid.com/issues" width="100%" height="700px" frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>
+            <iframe id='issues-iframe' width="100%" height="700px" frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>
               ></iframe>
             <!--<img
                 src="img/portfolio/cabin.png"
@@ -575,7 +521,7 @@
                   </li>
                   <li>
                     Using Firebase for the database and autorization.
-                  </li> 
+                  </li>
                   <li>
                     Git as version control.
                   </li>
@@ -594,10 +540,10 @@
               </ul>
               <div class="row linksModal">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                  <a href="http://icmadrid.com/issues" class="btn btn-lg btn-outline btnModal" target="_blank">
+                  <a href="http://icmadrid.com/issues" class="btn btn-lg btn-outline btnModal" rel="noopener" target="_blank">
                     <i class="fa fa-external-link"></i> Link
                   </a>
-                  <a href="https://github.com/jtefera/issues-manager" class="btn btn-lg btn-outline btnModal" target="_blank">
+                  <a href="https://github.com/jtefera/issues-manager" class="btn btn-lg btn-outline btnModal" rel="noopener" target="_blank">
                     <i class="fa fa-github"></i> Github
                   </a>
                 </div>
@@ -625,7 +571,7 @@
           <div class="modal-body">
             <h2>Podcasts</h2>
             <hr class="star-primary">
-            <iframe src="http://www.icmadrid.com/media" width="100%" height="700px" frameborder='no' allowtransparency='true' allowfullscreen='true'
+            <iframe id='podcasts-iframe' width="100%" height="700px" frameborder='no' allowtransparency='true' allowfullscreen='true'
               style='width: 100%;'>
               ></iframe>
               <!--<img
@@ -646,10 +592,10 @@
                       The app also synchronized audio files with iTunes Podcasts through XML/RSS.
                     </li>
                     <li>
-                      Podcast titles and categories are displayed in Spanish or English depending on the language of the user. 
+                      Podcast titles and categories are displayed in Spanish or English depending on the language of the user.
                     </li>
                     <li>
-                      The user can filter the podcasts based on category and language. 
+                      The user can filter the podcasts based on category and language.
                     </li>
                     <li>
                       Implemented links to download or share any of the files.
@@ -669,7 +615,7 @@
                 </ul>
                 <div class="row linksModal">
                   <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <a href="http://www.icmadrid.com/media" class="btn btn-lg btn-outline btnModal" target="_blank">
+                    <a href="http://www.icmadrid.com/media" class="btn btn-lg btn-outline btnModal" rel="noopener" target="_blank">
                       <i class="fa fa-external-link"></i> Link
                     </a>
                   </div>
@@ -697,8 +643,8 @@
           <div class="modal-body">
             <h2>Tic Tac Toe Game</h2>
             <hr class="star-primary">
-            <iframe height='705px' scrolling='no' src='//codepen.io/jonahum/embed/RagbgZ/?height=705&theme-id=0&default-tab=result&embed-version=2'
-              frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>
+            <iframe id="tictactoe-iframe" height='705px' scrolling='no' frameborder='no' allowtransparency='true' allowfullscreen='true'
+              style='width: 100%;'>
               </iframe>
               <!--<img
                 src="img/portfolio/cabin.png"
@@ -730,7 +676,7 @@
                 </ul>
                 <div class="row linksModal">
                   <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <a href="https://codepen.io/jonahum/pen/RagbgZ" class="btn btn-lg btn-outline btnModal" target="_blank">
+                    <a href="https://codepen.io/jonahum/pen/RagbgZ" class="btn btn-lg btn-outline btnModal" rel="noopener" target="_blank">
                       <i class="fa fa-external-link"></i> Link
                     </a>
                   </div>
@@ -758,8 +704,8 @@
           <div class="modal-body">
             <h2>Pomodoro Timer</h2>
             <hr class="star-primary">
-            <iframe height='700px' scrolling='no' src='//codepen.io/jonahum/embed/WwjyjY/?height=700&theme-id=0&default-tab=result&embed-version=2'
-              frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>
+            <iframe id="pomodoro-iframe" height='700px' scrolling='no' frameborder='no' allowtransparency='true' allowfullscreen='true'
+              style='width: 100%;'>
               </iframe>
               <!--<img
                 src="img/portfolio/cabin.png"
@@ -769,7 +715,7 @@
               <div class="col-xs-8 col-xs-offset-2">
                 <p>
                   Based on the famous
-                  <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique" target="_blank">
+                  <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique" rel="noopener" target="_blank">
                   Pomodoro Technique</a>.
                 </p>
                 <ul class="list-inline item-details">
@@ -782,7 +728,7 @@
                 </ul>
                 <div class="row linksModal">
                   <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <a href="https://codepen.io/jonahum/pen/WwjyjY" class="btn btn-lg btn-outline btnModal" target="_blank">
+                    <a href="https://codepen.io/jonahum/pen/WwjyjY" class="btn btn-lg btn-outline btnModal" rel="noopener" target="_blank">
                       <i class="fa fa-external-link"></i> Link
                     </a>
                   </div>
@@ -852,7 +798,7 @@
               </ul>
               <div class="row linksModal">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                  <a href="https://github.com/jtefera/atcs" class="btn btn-lg btn-outline btnModal" target="_blank">
+                  <a href="https://github.com/jtefera/atcs" class="btn btn-lg btn-outline btnModal" rel="noopener" target="_blank">
                     <i class="fa fa-github"></i> Github
                   </a>
                 </div>
@@ -880,7 +826,7 @@
           <div class="modal-body">
             <h2>Of Every! (in progress)</h2>
             <hr class="star-primary">
-            <iframe height='700px' src='/one_out' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>
+            <iframe height='700px' id="oneout-iframe" frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>
             </iframe>
             <!--<img
                 src="img/portfolio/cabin.png"
@@ -904,7 +850,7 @@
                   <a href="/one_out" class="btn btn-lg btn-outline btnModal" target="_blank">
                     <i class="fa fa-external-link"></i> Link
                   </a>
-                  <a href="https://github.com/jtefera/1out" class="btn btn-lg btn-outline btnModal" target="_blank">
+                  <a href="https://github.com/jtefera/1out" class="btn btn-lg btn-outline btnModal" rel="noopener" target="_blank">
                     <i class="fa fa-github"></i> Github
                   </a>
                 </div>
@@ -932,7 +878,7 @@
           <div class="modal-body">
             <h2>Cubli</h2>
             <hr class="star-primary">
-            <img src="img/portfolio/cubli.gif" />
+            <img id="cubli-gif" class="img-responsive" />
             <!--<img
                 src="img/portfolio/cabin.png"
                 class="img-responsive img-centered"
@@ -946,7 +892,7 @@
                   </li>
                   <li>
                     Used linear and non-linear control algorithms based on the famous
-                    <a href="https://www.youtube.com/watch?v=n_6p-1J551Y" target="_blank">
+                    <a href="https://www.youtube.com/watch?v=n_6p-1J551Y" rel="noopener" target="_blank">
                       Cubli Robot</a> to create a physical 3D simulation, including gravity, friction,
                     collision, forces, and momentum, which demonstrated the validity and robustness of the control algorithms
                     obtained.
@@ -1045,7 +991,62 @@
       </div>
     </div>
   </div>
-  <script src="js/index.js" type="text/javascript"></script>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/img/favicon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/img/favicon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/img/favicon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/img/favicon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/img/favicon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/img/favicon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/img/favicon/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/img/favicon/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/img/favicon/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/img/favicon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/img/favicon/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/img/favicon/manifest.json">
+  <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="/img/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-TileImage" content="/img/favicon/mstile-144x144.png">
+  <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <!--Google font-->
+  <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto" rel="stylesheet">
+  <!--Secondary styles-->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- Google Analythics -->
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-78947142-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <script
+    src="https://code.jquery.com/jquery-1.12.4.min.js"
+    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+    crossorigin="anonymous">
+  </script>
+  <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+    integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+    crossorigin="anonymous">
+  </script>
+  <script
+    src="js/index.js"
+    type="text/javascript">
+  </script>
 </body>
 
 </html>

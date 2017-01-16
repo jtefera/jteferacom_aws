@@ -1,4 +1,36 @@
-console.log("Cargado!")
+$('[data-toggle="tooltip"]').tooltip();
+
+$(document).ready(function() {
+  function loadIframeAndSilenceConsole(iframeId, url) {
+    $(iframeId).attr('src', url);
+    document.querySelector(iframeId).contentWindow.console.log = function() { /*nada}*/};
+  }
+  console.log('Downloading iframes');
+  loadIframeAndSilenceConsole('#icmadrid-iframe', 'http://www.icmadrid.com');
+  loadIframeAndSilenceConsole('#recipes-iframe', '/recipes');
+  loadIframeAndSilenceConsole('#issues-iframe', 'http://icmadrid.com/issues');
+  loadIframeAndSilenceConsole('#podcasts-iframe', 'http://www.icmadrid.com/media');
+  loadIframeAndSilenceConsole('#tictactoe-iframe', '//codepen.io/jonahum/embed/RagbgZ/?height=705&theme-id=0&default-tab=result&embed-version=2');
+  loadIframeAndSilenceConsole('#pomodoro-iframe', '//codepen.io/jonahum/embed/WwjyjY/?height=700&theme-id=0&default-tab=result&embed-version=2');
+  loadIframeAndSilenceConsole('#oneout-iframe', '/one_out');
+  $('<img />').attr('src', '../img/portfolio/spritesheet.png').load(function() {
+    console.log('downloaded high res image');
+    $(this).remove();
+    $('.portafolio-sprite').css('background-image', 'url(../img/portfolio/spritesheet.png)');
+  });
+  $('<img />').attr('src', '../img/programming_icons/spritesheet.png').load(function() {
+    console.log('downloaded high res image 2');
+    $(this).remove();
+    $('.frameworks-sprite').css('background-image', 'url(../img/programming_icons/spritesheet.png)');
+  });
+  $('<img />').attr('src', '../img/portfolio/cubli.gif').load(function() {
+    console.log('downloaded high res image 3');
+    $(this).remove();
+    $('#cubli-gif').attr('src', '../img/portfolio/cubli.gif');
+  });
+});
+
+
 contactForm.addEventListener("submit", function (e) {
   console.log("Form enviado")
   e.preventDefault();
@@ -36,26 +68,7 @@ contactForm.addEventListener("submit", function (e) {
   })
   .catch(function(e){
     $("#contactModalError").modal('show')
-  })
-  /*
-  var data = "name=JOnathan&email=correojona%40hotmail.com&phone=7028810253&message=Te%20quiero";
-
-  var xhr = new XMLHttpRequest();
-  xhr.withCredentials = true;
-
-  xhr.addEventListener("readystatechange", function () {
-    if (this.readyState === 4) {
-      console.log(this.responseText);
-    }
   });
 
-  xhr.open("POST", "http://localhost/send_contact");
-  xhr.setRequestHeader("'content-type'", "application/json");
-  xhr.setRequestHeader("accept", "application/json");
-  xhr.setRequestHeader("cache-control", "no-cache");
-  xhr.setRequestHeader("postman-token", "00e37f5c-45bc-421f-8e68-32472e88daea");
-  xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 
-  xhr.send(data);
-  */
 })
