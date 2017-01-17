@@ -93,6 +93,7 @@ The Node server will be listening to the port 8080. If you want to deliver from 
     sudo iptables -t nat -I PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080
 
 ## How to connect to the server
+### Using PuTTY
 Go to www.aws.amazon.com, login with your account. Go to EC2 and select the instance where the server is hosted.
 
 From there, get your username(Eg. ubuntu) and hostname.
@@ -108,6 +109,19 @@ From `Connection > SSH > Auth`, browse and open the `.ppk` file.
 Press open. You are in!
 
 More Instructions: https://www.youtube.com/watch?v=V6JKLQj50ro
+
+### Using ssh
+Go to www.aws.amazon.com, login with your account. Go to EC2 and select the instance where the server is hosted.
+
+Press the Connect button and you will see at the bottom the command to connect through SSH:
+
+    ssh -i "your_pem_file.pem" ubuntu@hostname
+
+In your terminal, go to the directory where you have your `.pem` file and execute the above code.
+
+In Windows, if you don´t have `ssh` installed, check [this link](https://www.outcoldman.com/en/archive/2014/07/20/scoop/)
+
+
 
 
 
