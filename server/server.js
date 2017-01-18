@@ -55,7 +55,7 @@ app.use(wwwRedirect);
 
 //logger
 
-app.use(morgan('combined'));
+// app.use(morgan('combined'));
 let recipeServer = require("../src/projects/recipes_app_react/src/server/serverApp.js").app
 app.use("/recipes", recipeServer);
 app.use("/one_out", express.static('./src/projects/1out/public/'));
