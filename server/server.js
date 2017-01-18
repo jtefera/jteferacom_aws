@@ -25,7 +25,7 @@ var lex = LEX.create({
   configDir: require('os').homedir() + '/letsencrypt/etc',
   approveRegistration: function (hostname, cb) {
     cb(null, {
-      domains: [hostname],
+      domains: ['www.jtefera.com', 'jtefera.com'],
       email: 'hello@jtefera.com',
       agreeTos: true,
     });
