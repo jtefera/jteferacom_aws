@@ -22,6 +22,7 @@
     "core-js": "^2.4.1",
     "express": "^4.14.0",
     "json-loader": "^0.5.4",
+    "letsencrypt-express": "^2.0.6",
     "morgan": "^1.7.0",
     "multer": "^1.1.0",
     "react": "^15.0.1",
