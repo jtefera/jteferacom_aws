@@ -23,13 +23,10 @@ const PATHS = {
 
 var lex = LEX.create({
   configDir: require('os').homedir() + '/letsencrypt/etc',
-  approveRegistration: function (hostname, cb) {
-    cb(null, {
-      domains: ['www.jtefera.com', 'jtefera.com'],
-      email: 'hello@jtefera.com',
-      agreeTos: true,
-    });
-  }
+  server: 'staging',
+  approveDomains: ['jtefera.com', 'www.jtefera.com', 'localhost'],
+  email: 'hello@jtefera.com',
+  agreeTos: true
 });
 
 lex.onRequest = app;
