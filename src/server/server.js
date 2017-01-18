@@ -20,6 +20,8 @@ const PATHS = {
 	searchRecipes: "/recipes/search"
 };
 
+// Based on https://github.com/justinmc/letsencrypt-express-example/
+
 var lex = LEX.create({
   configDir: require('os').homedir() + '/letsencrypt/etc',
   approveRegistration: function (hostname, cb) {
@@ -58,70 +60,8 @@ app.use(bodyParser.json());
 //parses url files spliting the url in its different categoriesssss
 app.use(bodyParser.urlencoded({extended: true}));
 
-/*app.use('/js/', babel({
-	srcPath: 'js/src',
-	cachePath: __dirname + '/_cache',
-	babelOptions: {
-		presets: ['es2015', 'react']
-	},
-	debug: true
-}));*/
-
-//Mail config
-
-//Config files with my AWS keys
-aws.config.loadFromPath('./server/mail/config.json');
-
-//SES is the AWS service for emails
-var ses = new aws.SES();
-
-// send to list
-var to = ['jonathantefera@outlook.com']
-
-// this must relate to a verified SES account
-var from = 'jonahum@gmail.com'
-
-//
-app.post("/send_contact", (req, res) => {
-	let contactInfo = req.body
-	console.log("..........................")
-	console.log(contactInfo)
-	console.log("..........................")
-	// this sends the email
-	// @todo - add HTML version
-	let subjectMessage = "jtefera.com: " + contactInfo.name,
-			messageText = "Message by " + contactInfo.name + "\n"
-										+ "Email: " + contactInfo.email + "\n"
-										+ "Phone: " + contactInfo.phone + "\n"
-										+ "Message: " + contactInfo.message + "\n"
-										+ "Date: " + new Date() + "\n"
-										+ "Unformatted" + JSON.stringify(req.body, null, "");
-	ses.sendEmail( {
-	   Source: from,
-	   Destination: { ToAddresses: to },
-	   Message: {
-	       Subject: {
-	          Data: subjectMessage
-	       },
-	       Body: {
-	           Text: {
-	               Data: messageText
-	           }
-	        }
-	   }
-	}
-	, function(err, data) {
-	    if(err) {
-	      throw err
-	    }
-
-	    console.log('Email sent:');
-	    console.log(data);
-	 });
-
-	res.json(contactInfo)
-
-})
+// Response to the contact form
+app.post("/send_contact", require('./mailRouter.js'));
 
 //If this middleware is used it is because none of the previous worked!
 //So,, it is a 404
@@ -130,23 +70,5 @@ app.use((req, res) => {
 	res.redirect('/404.html')
 })
 
-
-/*const server_port = 8080;
-//const server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
-
-app.listen(server_port, () => {
-	console.log("dirname is " + __dirname);
-	console.log("----------------------------");
-	console.log("Server started on"  + ":" + server_port);
-	console.log("---------------------------");
-});*/
-
-// handles your app
-/*require('https').createServer(lex.httpsOptions, lex.middleware(app)).listen(443, function () {
-  console.log("Listening for ACME tls-sni-01 challenges and serve app on", this.address());
-});*/
-
 var server = http.createServer(app);
 server.listen(8080);
-//server.on('error', onError);
-//server.on('listening', onListening);
