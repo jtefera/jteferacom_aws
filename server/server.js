@@ -38,6 +38,21 @@ lex.listen([80], [443, 5001], function () {
   var protocol = ('requestCert' in this) ? 'https': 'http';
   console.log("Listening at " + protocol + '://localhost:' + this.address().port);
 });
+
+
+// Redirect www.jtefera.com to jtefera.com
+// Check 2nd answer from http://stackoverflow.com/questions/7013098/node-js-www-non-www-redirection
+function wwwRedirect(req, res, next) {
+    if (req.headers.host.slice(0, 4) === 'www.') {
+        var newHost = req.headers.host.slice(4);
+        return res.redirect(301, req.protocol + '://' + newHost + req.originalUrl);
+    }
+    next();
+};
+
+app.set('trust proxy', true);
+app.use(wwwRedirect);
+
 //logger
 
 app.use(morgan('combined'));
