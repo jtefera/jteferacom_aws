@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const fs = require( 'fs');
 const path = require('path');
 const morgan = require('morgan');
-var LEX = require('letsencrypt-express').testing();
+var LEX = require('letsencrypt-express');
 
 //Server
 let app = express();
