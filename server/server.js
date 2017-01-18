@@ -22,7 +22,9 @@ const PATHS = {
 // Based on https://github.com/justinmc/letsencrypt-express-example/
 
 var lex = LEX.create({
-  configDir: require('os').homedir() + '/letsencrypt/etc',
+  challenges: { 'http-01': require('le-challenge-fs').create({ webrootPath: '/tmp/acme-challenges' }) }, 
+  store: require('le-store-certbot').create({ webrootPath: '/tmp/acme-challenges' }),
+
   server: 'https://acme-v01.api.letsencrypt.org/directory',
   approveDomains: ['jtefera.com', 'www.jtefera.com'],
   email: 'hello@jtefera.com',
