@@ -9,7 +9,7 @@ $(document).ready(function() {
   function loadHigherResImgAndSub(imgSelector, imgUrl) {
     $('<img />').attr('src', imgUrl).load(function() {
       $(this).remove();
-      $(imgSelector).attr('src', '../img/portfolio/cubli.gif');
+      $(imgSelector).attr('src', imgUrl);
     });
   }
 
