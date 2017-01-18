@@ -1,0 +1,5 @@
+{
+  "accessKeyId": "your aws ses access key id",
+  "secretAccessKey": "your aws ses secret key id",
+  "region": "the region of your instance (E.g us-west-2)"
+}

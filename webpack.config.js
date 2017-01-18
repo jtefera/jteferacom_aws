@@ -29,12 +29,7 @@ module.exports = [{
                 context: 'src/front/static',
                 from: '**/*',
                 to: 'public/',
-            }]),
-            new CopyWebpackPlugin([{
-                context: 'src/server/',
-                from: '**/*',
-                to: 'server/',
-            }]),
+            }])
         ],
     }
 ];
