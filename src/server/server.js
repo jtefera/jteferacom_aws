@@ -26,7 +26,7 @@ var lex = require('letsencrypt-express').create({
 //, sni: require('le-sni-auto').create({})
 
 , approveDomains: ['jtefera.com', 'www.jtefera.com']
-, email: 'hello@jtefera.com',
+, email: 'hello@jtefera.com'
 , agreeTos: true
 });
 
