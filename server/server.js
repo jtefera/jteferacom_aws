@@ -23,7 +23,7 @@ const PATHS = {
 
 var lex = LEX.create({
   configDir: require('os').homedir() + '/letsencrypt/etc',
-  server: 'staging',
+  server: 'https://acme-v01.api.letsencrypt.org/directory',
   approveDomains: ['jtefera.com', 'www.jtefera.com'],
   email: 'hello@jtefera.com',
   agreeTos: true
