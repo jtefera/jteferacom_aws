@@ -9,35 +9,9 @@ module.exports = [{
         },
         devtool: 'source-map',
         module: {
-            loaders: [{
-                test: /.jsx?$/,
-                loader: 'babel-loader',
-                exclude: /node_modules/,
-                query: {
-                    presets: ['es2015'],
-                },
-            }],
-        },
-        plugins: [
-            new CopyWebpackPlugin([{
-                context: 'src/front/static',
-                from: '**/*',
-                to: 'public/',
-            }]),
-        ],
-    },
-    {
-        entry: {
-            './server/server': './src/server/server.js',
-        },
-        output: {
-            path: __dirname,
-            filename: '[name].js',
-        },
-        target: 'node',
-        module: {
-            loaders: [{
-                    test: /.js$/,
+            loaders: [
+                {
+                    test: /.jsx?$/,
                     loader: 'babel-loader',
                     exclude: /node_modules/,
                     query: {
@@ -52,9 +26,14 @@ module.exports = [{
         },
         plugins: [
             new CopyWebpackPlugin([{
-                context: 'src/server/mail',
+                context: 'src/front/static',
                 from: '**/*',
-                to: 'server/mail/',
+                to: 'public/',
+            }]),
+            new CopyWebpackPlugin([{
+                context: 'src/server/',
+                from: '**/*',
+                to: 'server/',
             }]),
         ],
     }

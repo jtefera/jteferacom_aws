@@ -1,10 +1,11 @@
-import http from "http";
-import express from "express";
-import bodyParser from "body-parser";
-import fs from  'fs';
-import path from 'path'
-import morgan from 'morgan'
-import aws from 'aws-sdk'
+'use strict';
+const http = require("http");
+const express = require("express");
+const bodyParser = require("body-parser");
+const fs = require( 'fs');
+const path = require('path');
+const morgan = require('morgan');
+const aws = require('aws-sdk');
 
 //var routes = require("routes");
 
