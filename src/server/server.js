@@ -41,9 +41,9 @@ lex.listen([80], [443, 5001], function () {
 //logger
 
 app.use(morgan('combined'));
-/*let recipeServer = require("../projects/recipes_app_react/src/server/serverApp.js").app
+let recipeServer = require("../src/projects/recipes_app_react/src/server/serverApp.js").app
 app.use("/recipes", recipeServer);
-app.use("/one_out", express.static('./src/projects/1out/public/'));*/
+app.use("/one_out", express.static('./src/projects/1out/public/'));
 //Directories in __dirname
 fs.readdir('./', (err, files) => {
   files.forEach(file => {
