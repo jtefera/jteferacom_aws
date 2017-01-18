@@ -16,14 +16,16 @@ var lex = require('letsencrypt-express').create({
 
 // If you wish to replace the default plugins, you may do so here
 //
-, challenges: { 'http-01': require('le-challenge-fs').create({ webrootPath: '/tmp/acme-challenges' }) }
-, store: require('le-store-certbot').create({ webrootPath: '/tmp/acme-challenges' })
+, challenges: { 
+	'http-01': require('le-challenge-fs').create({ webrootPath: '~/letsencrypt/var/acme-challenges' })
+}
+, store: require('le-store-certbot').create({ webrootPath: '~/letsencrypt/var/acme-challenges' })
 
 // You probably wouldn't need to replace the default sni handler
 // See https://git.daplie.com/Daplie/le-sni-auto if you think you do
 //, sni: require('le-sni-auto').create({})
 
-, approveDomains: approveDomains
+, approveDomains: ['jtefera.com', 'www.jtefera.com']
 });
 
 function approveDomains(opts, certs, cb) {
