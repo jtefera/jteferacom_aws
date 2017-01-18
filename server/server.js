@@ -19,17 +19,7 @@ const PATHS = {
 	searchRecipes: "/recipes/search"
 };
 
-// Based on https://github.com/justinmc/letsencrypt-express-example/
 
-var lex = LEX.create({
-  challenges: { 'http-01': require('le-challenge-fs').create({ webrootPath: '/tmp/acme-challenges' }) }, 
-  store: require('le-store-certbot').create({ webrootPath: '/tmp/acme-challenges' }),
-
-  server: 'https://acme-v01.api.letsencrypt.org/directory',
-  approveDomains: ['jtefera.com', 'www.jtefera.com'],
-  email: 'hello@jtefera.com',
-  agreeTos: true
-});
 
 
 // Redirect www.jtefera.com to jtefera.com
@@ -76,12 +66,25 @@ app.use((req, res) => {
 	res.redirect('/404.html')
 })
 
+// Based on https://github.com/justinmc/letsencrypt-express-example/
+
+var lex = LEX.create({
+  challenges: { 'http-01': require('le-challenge-fs').create({ webrootPath: '/tmp/acme-challenges' }) }, 
+  store: require('le-store-certbot').create({ webrootPath: '/tmp/acme-challenges' }),
+
+  server: 'https://acme-v01.api.letsencrypt.org/directory',
+  approveDomains: ['jtefera.com', 'www.jtefera.com'],
+  email: 'hello@jtefera.com',
+  agreeTos: true,
+  app: app
+});
+
 // handles acme-challenge and redirects to https
 require('http').createServer(lex.middleware(require('redirect-https')())).listen(80, function () {
   console.log("Listening for ACME http-01 challenges on", this.address());
 });
 
 // handles your app
-require('https').createServer(lex.httpsOptions, lex.middleware(app)).listen(443, function () {
+require('https').createServer(lex.httpsOptions, app).listen(443, function () {
   console.log("Listening for ACME tls-sni-01 challenges and serve app on", this.address());
 });
