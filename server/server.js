@@ -29,13 +29,6 @@ var lex = LEX.create({
   agreeTos: true
 });
 
-lex.onRequest = app;
-
-lex.listen([80], [443, 5001], function () {
-  var protocol = ('requestCert' in this) ? 'https': 'http';
-  console.log("Listening at " + protocol + '://localhost:' + this.address().port);
-});
-
 
 // Redirect www.jtefera.com to jtefera.com
 // Check 2nd answer from http://stackoverflow.com/questions/7013098/node-js-www-non-www-redirection
@@ -81,5 +74,12 @@ app.use((req, res) => {
 	res.redirect('/404.html')
 })
 
-var server = http.createServer(app);
-server.listen(8080);
+// handles acme-challenge and redirects to https
+require('http').createServer(lex.middleware(require('redirect-https')())).listen(80, function () {
+  console.log("Listening for ACME http-01 challenges on", this.address());
+});
+
+// handles your app
+require('https').createServer(lex.httpsOptions, lex.middleware(app)).listen(443, function () {
+  console.log("Listening for ACME tls-sni-01 challenges and serve app on", this.address());
+});
