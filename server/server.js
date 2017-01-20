@@ -42,11 +42,11 @@ let recipeServer = require("../src/projects/recipes_app_react/src/server/serverA
 app.use("/recipes", recipeServer);
 app.use("/one_out", express.static('./src/projects/1out/public/'));
 //Directories in __dirname
-fs.readdir('./', (err, files) => {
+/*fs.readdir('./', (err, files) => {
   files.forEach(file => {
     console.log(file);
   });
-});
+});*/
 //Static pages
 app.use(express.static('public'));
 
@@ -87,4 +87,12 @@ require('http').createServer(lex.middleware(require('redirect-https')())).listen
 // handles your app
 require('https').createServer(lex.httpsOptions, app).listen(443, function () {
   console.log("Listening for ACME tls-sni-01 challenges and serve app on", this.address());
+});
+
+const server_port = 8080;
+//const server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
+
+app.listen(server_port, () => {
+	console.log("Local and http testing in port"  + ":" + server_port);
+	console.log("---------------------------");
 });
