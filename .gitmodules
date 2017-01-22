@@ -1,0 +1,9 @@
+[submodule "1out"]
+path = src/projects/1out
+url =  https://github.com/jtefera/1out.git
+[submodule "recipes_app_react"]
+path = src/projects/recipes_app_react
+url =  https://github.com/jtefera/recipes_app_react.git
+[submodule "src/projects/product_searcher"]
+	path = src/projects/product_searcher
+	url = https://github.com/jtefera/product_searcher.git
