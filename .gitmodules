@@ -7,3 +7,6 @@
 [submodule "src/projects/product_searcher"]
 	path = src/projects/product_searcher
 	url = https://github.com/jtefera/product_searcher.git
+[submodule "src/projects/hn_searcher"]
+	path = src/projects/hn_searcher
+	url = https://github.com/jtefera/hn_searcher.git
